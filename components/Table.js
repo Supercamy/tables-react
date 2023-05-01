@@ -176,7 +176,7 @@ function Table({ columns, data }) {
                 {...getTableProps()}
                 className='min-w-full divide-y divide-gray-200'
               >
-                <thead className='bg-gray-50'>
+                <thead className='bg-slate-50'>
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map((column) => (
