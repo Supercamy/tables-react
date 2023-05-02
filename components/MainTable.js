@@ -105,10 +105,25 @@ const getData = () => {
         'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
     },
   ];
+
   return [...data];
 };
 
-const MainTable = () => {
+const MainTable = (props) => {
+  const data1 = [
+    {
+      name: 'Jane Cooper',
+      email: 'jane.cooper@example.com',
+      title: 'Regional Paradigm Technician',
+      department: 'Optimization',
+      status: 'Active',
+      opal: 123456,
+      role: 'Admin',
+      age: 27,
+      imgUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+  ];
   const columns = React.useMemo(
     () => [
       {
@@ -151,6 +166,8 @@ const MainTable = () => {
 
   const data = React.useMemo(() => getData(), []);
 
+  console.log('gordon', props.mydata);
+
   return (
     <div className='min-h-screen bg-gray-100 text-gray-900'>
       <main className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4'>
@@ -164,5 +181,23 @@ const MainTable = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      mydata: data1,
+    },
+  };
+}
+
+// export async function getServerSideProps(context) {
+//   const req = context.req;
+//   const res = context.res;
+//   return {
+//     props: {
+//       mydata: data1,
+//     },
+//   };
+// }
 
 export default MainTable;

@@ -8,6 +8,8 @@ function DetailPage() {
 
   const myOpal = router.query.opal;
 
+  //   console.log(data);
+
   return <h1>Details Page {myOpal}</h1>;
 }
 
